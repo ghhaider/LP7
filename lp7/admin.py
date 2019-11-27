@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import Group
 from lp7.forms import MyUserChangeForm, MyUserCreationForm
-from lp7.models import top_bar, Logo, about, \
+from lp7.models import Logo, about, \
     Locations, BGimages, LP7features, Events, LP7MembersLogo, LP7Testimonials, Promotions, \
     PricingRawalpindi, PricingIslamabad, PackagePriceFeatures, ContactedUser, \
     galleryISD, galleryRWP, eventBooking, packageSpace, EventsHeader
@@ -176,7 +176,7 @@ class customUserAdmin(UserAdmin):
 admin.site.register(customUser, customUserAdmin)
 
 # Register your models here.
-admin.site.register(top_bar)
+
 # admin.site.register(Logo)
 admin.site.register(about)
 admin.site.register(EventsHeader)

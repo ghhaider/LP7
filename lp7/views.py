@@ -15,7 +15,7 @@ import urllib
 import json
 from django.core.paginator import Paginator
 from django.core.files.uploadedfile import SimpleUploadedFile
-from lp7.models import top_bar, Logo, about, \
+from lp7.models import Logo, about, \
     BGimages, LP7features, Locations, Events, LP7MembersLogo, LP7Testimonials, Promotions, \
     PricingRawalpindi, PricingIslamabad, PackagePriceFeatures, ContactedUser, eventBooking, \
     packageSpace, galleryRWP, galleryISD
