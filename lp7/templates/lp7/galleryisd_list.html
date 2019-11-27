@@ -1,0 +1,47 @@
+{% extends "shared.html" %}
+
+{% block content %}
+    <section id="blockContent" style="padding: 0">
+        {% if sameContent.BG %}{% for bg in sameContent.BG %}
+            <section id="locationBG" style=" padding: 0; background-image: url('{{ bg.galleryPageBG.url }} ')">
+                <div class="col-12 siteHeading">
+                    <h2>Gallery Islamabad</h2>
+                </div>
+            </section>
+        {% endfor %}{% endif %}
+
+        {#Gallery Page#}
+
+        <section id="gallery">
+            <div class="container">
+                <div class="col-12 listHeading pl-0 pr-0 mb-4 mt-5">
+                    <h3>Islamabad</h3>
+                </div>
+                <div class="row">
+                    {% if galleryisd_list %}
+                        {% for galleryisd in galleryisd_list reversed %}
+                            <div class="col-md-3 col-sm-6 col-12 mb-3">
+                                <div id="galleryBody " class="hvrbox">
+                                    <a href="{{ galleryisd.galleryISDimage.url }}" data-fancybox="gallery1"
+                                       data-caption="{{ galleryisd.galleryISDimageName }} at {{ galleryisd.galleryISDevent }}">
+                                        <img src="{{ galleryisd.galleryISDimage.url }}"
+                                             class="img-fluid rounded hvrbox-layer_bottom">
+                                        <div class="hvrbox-layer_top">
+                                            <p class="hvrbox-text">{{ galleryisd.galleryISDimageName }}
+                                                at {{ galleryisd.galleryISDevent }}
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </section>
+{% endblock %}

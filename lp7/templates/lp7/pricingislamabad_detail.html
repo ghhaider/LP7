@@ -1,0 +1,71 @@
+{% extends 'shared.html' %}
+
+{% block content %}
+
+    <section id="blockContent" style="padding: 0">
+        {% if sameContent.BG %}{% for bg in sameContent.BG %}
+            <section id="locationBG" style=" padding: 0; background-image: url('{{ bg.packageDetailPageBG.url }} ')">
+                <div class="col-12 siteHeading">
+                    <h2>Package Detail</h2>
+                </div>
+            </section>
+        {% endfor %}{% endif %}
+
+
+        {# Pricing Detail Section#}
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="packageDetailHeading">
+                            <h3>{{ pricingislamabad.PackageNameISD }} <small>Islamabad</small></h3>
+                        </div>
+                        <div class="col-12 packageDetailFeatures">
+                            <h5>Package Detail</h5>
+                            <ul>
+                                {% for Pisd in pricingislamabad.PackageFeature.all %}
+                                    <li>{{ Pisd }}</li>
+                                    {% if not forloop.last %}
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="col-12 packageDetailPrice">
+                            <strong id="ISD{{ pricingislamabad.discountedPriceISD }}" >{{ pricingislamabad.PackagePrice }}<span>/Month</span>
+                            </strong>
+                            {% if pricingislamabad.discountedPriceISD %}
+                                <h5 class="discountedPriceISD">{{ pricingislamabad.discountedPriceISD }}<span>/Month</span>
+                                </h5>
+                                <h6>Get <span>{{ pricingislamabad.discountedPercentISD }} </span> off upto <span
+                                        style="font-size: 12px;"> {{ pricingislamabad.discountedDateISD }} </span>
+                                </h6>
+                            {% endif %}
+                        </div>
+                        <div class="featuresBTN" style="text-align: left">
+                            <a href="{% url 'PackageSpace' %}" class="btn btn-outline-warning">Book Space Now</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="otherPackageDetail">
+                            <h4>Packages in Islamabad</h4>
+                            <div class="packagesList">
+                                {% if sameContent.Pisd %}
+                                    {% for PriceISD in sameContent.Pisd %}
+                                        <ul>
+                                            <li>
+                                                <a href="{{ PriceISD.get_absolute_url }}">{{ PriceISD.PackageNameISD }}</a>
+                                            </li>
+                                        </ul>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </section>
+
+{% endblock %}

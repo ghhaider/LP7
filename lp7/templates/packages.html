@@ -1,0 +1,112 @@
+{% extends "shared.html" %}
+
+{% block content %}
+    <section id="blockContent" style="padding: 0">
+        {% if sameContent.BG %}{% for bg in sameContent.BG %}
+            <section id="locationBG" style=" padding: 0; background-image: url('{{ bg.promotionDetailPageBG.url }} ')">
+                <div class="col-12 siteHeading">
+                    <h2>Packages</h2>
+                </div>
+            </section>
+        {% endfor %}{% endif %}
+        {#Packages Page#}
+
+        <section id="packages">
+            <div class="container">
+                <div class="col-12 packagesHeading">
+                    <p>We help you focus on what really matters – creating and empowering your work.</p>
+                </div>
+                <div class="row ">
+                    <div class="col-12 packageSubHeading">
+                        <h5>Rawalpindi</h5>
+                    </div>
+                    {% if Prwp %}
+                        {% for PriceRWP in Prwp|slice:":3" %}
+                            <div class="col-md-4 col-sm-6 col-12">
+                                <div class="table table-responsive packageBody">
+                                    <div class="packageHeader">
+                                        <img src="{{ PriceRWP.PackageImageRWP.url }}" class="img-fluid"
+                                             alt="Price Package Image">
+                                        <h5>{{ PriceRWP.PackageNameRWP }}</h5>
+                                    </div>
+                                    <div class="packageFeaturesList">
+                                        <ul>
+                                            <p id="RWP{{ PriceRWP.discountedPriceRWP }}">{{ PriceRWP.PackagePrice }}<span>/Month</span>
+                                            </p>
+                                            {% if PriceRWP.discountedPriceRWP %}
+                                                <h5 class="discountedPriceRWP">{{ PriceRWP.discountedPriceRWP }}<span>/Month</span>
+                                                </h5>
+                                                <h6>Get <span>{{ PriceRWP.discountedPercentRWP }}</span>off upto <span
+                                                        style="font-size: 12px;">{{ PriceRWP.discountedDateRWP }}</span>
+                                                </h6>
+                                            {% endif %}
+                                            <div class="featuresBTN">
+                                                <a href="{{ PriceRWP.get_absolute_url }}"
+                                                   class="btn btn-outline-warning">More
+                                                    Detail</a>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="row ">
+                    <div class="col-12 packageSubHeading">
+                        <h5>Islamabad</h5>
+                    </div>
+                    {% if Pisd %}
+                        {% for PriceISD in Pisd|slice:":3" %}
+                            <div class="col-md-4 col-sm-6 col-12">
+                                <div class="table table-responsive packageBody">
+                                    <div class="packageHeader">
+                                        <img src="{{ PriceISD.PackageImageISD.url }}" class="img-fluid"
+                                             alt="Price Package Image">
+                                        <h5>{{ PriceISD.PackageNameISD }}</h5>
+                                    </div>
+                                    <div class="packageFeaturesList">
+                                        <ul>
+                                            <p id="ISD{{ PriceISD.discountedPriceISD }}">{{ PriceISD.PackagePrice }}<span>/Month</span>
+                                            </p>
+                                            {% if PriceISD.discountedPriceISD %}
+                                                <h5 class="discountedPriceISD">{{ PriceISD.discountedPriceISD }}<span>/Month</span>
+                                                </h5>
+                                                <h6>Get <span>{{ PriceISD.discountedPercentISD }} </span> off upto <span
+                                                        style="font-size: 12px;"> {{ PriceISD.discountedDateISD }} </span>
+                                                </h6>
+                                            {% endif %}
+                                            <div class="featuresBTN">
+                                                <a href="{{ PriceISD.get_absolute_url }}"
+                                                   class="btn btn-outline-warning">More
+                                                    Detail</a>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="col-12 packageOptional pl-0 pr-0">
+                    <h4>Optional Add-Ons</h4>
+                </div>
+                <div class="row">
+                    {% if addOn %}
+                        {% for optionalAddOn in addOn %}
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="optionalAddonBody">
+                                    <h6>{{ optionalAddOn.featureName }}</h6>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </section>
+{% endblock %}

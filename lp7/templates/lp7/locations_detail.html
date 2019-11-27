@@ -1,0 +1,49 @@
+{% extends "shared.html" %}
+
+{% block content %}
+    <section id="blockContent" style="padding: 0">
+        {% if sameContent.BG %}{% for bg in sameContent.BG %}
+            <section id="locationBG" style=" padding: 0; background-image: url('{{ bg.locationDetailBG.url }} ')">
+                <div class="col-12 siteHeading">
+                    <h2>Location Detail</h2>
+                </div>
+            </section>
+        {% endfor %}{% endif %}
+        {#Location Detail Page Section#}
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 eventDetailHeading">
+                        <h4> {{ locations.LocationName }}</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="eventListImage">
+                            <img class="img-fluid LocationImage"
+                                 src="{{ locations.LocationImage.url }}">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="promotionListDetail">
+                            <strong>Address:</strong>
+                            <address>{{ locations.LocationAddress }}</address>
+                            <div class="eventData mt-5">
+                                <ul>
+                                    <li><i class="fa fa-phone-alt eventIcon" aria-hidden="true"></i>
+                                        <strong>Phone:</strong> <span> {{ locations.LocationPhone }} </span></li>
+                                    <li><i class="fas fa-mobile-alt eventIcon" aria-hidden="true"></i>
+                                        <strong>Mobile:</strong> <span> {{ locations.LocationMobile }} </span></li>
+                                    <li><i class="fas fa-envelope eventIcon" aria-hidden="true"></i>
+                                        <strong>Email:</strong> <span> {{ locations.LocationEmailID }} </span></li>
+                                    <li><i class="fa fa-globe eventIcon" aria-hidden="true"></i>
+                                        <strong>Web:</strong> <span> {{ locations.LocationWeb }} </span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+{% endblock %}

@@ -1,0 +1,488 @@
+/*This is is css file used for every single page f a website except home page*/
+
+/*Common Section*/
+#blockContent {
+    background-color: #F8F9FA;
+}
+
+.siteHeading h2:after {
+    content: '';
+    display: block;
+    position: relative;
+    width: 10%;
+    border: 1px solid white;
+    margin-top: 6px !important;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.siteHeading h2 {
+    color: white;
+    padding-top: 100px;
+    padding-left: 30px;
+    padding-bottom: 50px;
+    text-transform: uppercase;
+}
+
+
+/*Event  & Promotion Section*/
+
+.eventListButton, .promotionListButton {
+    border: 2px solid #f64c72;
+    background: transparent;
+    color: black;
+    font-weight: bold;
+}
+
+.eventListButton:hover, .promotionListButton:hover {
+    border: 2px solid #f64c72;
+    background: linear-gradient(to right, #f64c72 0%, #99738e 100%);
+    color: black;
+    font-weight: bold;
+}
+
+.eventDetailHeading h2, .promotionDetailHeading h2 {
+    color: #2f2fa2;
+    padding-bottom: 30px;
+}
+
+.eventListDetail h4 a, .promotionListDetail h4 a {
+    text-decoration: none;
+    color: #130959;
+    font-weight: bold;
+}
+
+.eventListDetail h4 a:hover, .promotionListDetail h4 a:hover {
+    color: #f64c72;
+}
+
+.eventTextBody h4 {
+    font-size: 45px;
+    color: #130959;
+    padding: 25px 0 10px 0;
+    font-weight: bold;
+}
+
+.eventTextBody h4 span {
+    color: #f64c72;
+    font-weight: bold;
+}
+
+.eventTextBody p {
+    font-size: 18px;
+    color: #553d67;
+    padding: 5px 0 10px 0;
+}
+
+.eventTextBody a, .eventTextBody a:active, .eventTextBody a:focus {
+    border: 2px solid #f64c72;
+    background: linear-gradient(to right, #f64c72 0%, #99738e 100%);
+    color: black;
+    font-weight: bold;
+}
+
+.eventTextBody a:hover {
+    border: 2px solid #f64c72;
+    background: transparent;
+    color: black;
+    font-weight: bold;
+}
+
+.eventImageBody {
+    padding: 25px 0 10px 0;
+    filter: drop-shadow(8px 8px 10px #f64c72);
+}
+
+.eventListImage {
+    filter: drop-shadow(8px 8px 10px #f64c72);
+}
+
+/*Location Page Section*/
+#locationBG {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+
+.locationSubHeading h3 {
+    text-align: center;
+    color: #130959;
+    padding: 20px 0;
+    font-weight: bold;
+}
+
+.locationHeadOffice {
+    border: 1px solid #2f2fa2;
+}
+
+.headOfficeMap {
+    padding: 10px;
+    filter: drop-shadow(0px 8px 9px #f64c72)
+}
+
+.headOfficeDetail h4 {
+    padding-top: 10px;
+}
+
+
+/*Contact Page Section*/
+.contactSubHeading h3 {
+    padding: 30px 0;
+    text-align: center;
+    color: #2f2fa2;
+}
+
+.contactFormBody label {
+    font-size: 15px;
+    color: #2f2fa2;
+    font-weight: bold;
+}
+
+.contactFormBody {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 40px;
+    background-color: #f1f1f1;
+}
+
+.formInput, .formInput:active, .formInput:focus {
+    background: #553d67;
+    color: white;
+}
+
+.contactFormBody ::placeholder {
+    color: white;
+}
+
+.contactButton {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.contactBTN {
+    border: 2px solid #f64c72;
+    background: linear-gradient(to right, #f64c72 0%, #99738e 100%);
+    color: white;
+    font-weight: bold;
+    width: 38%;
+}
+
+.contactBTN:hover {
+    border: 2px solid #f64c72;
+    background: transparent;
+    color: black;
+    font-weight: bold;
+    width: 38%;
+}
+
+.contactSocial {
+    text-align: center;
+}
+
+.contactSocialIcons ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.contactSocialIcons ul li a {
+    color: #f64c72;
+}
+
+.contactSocialIcons ul li a:hover {
+    color: #2f2fa2;
+}
+
+/*Packages Section*/
+.packageDetailHeading h3 {
+    font-size: 35px;
+    color: #2f2fa2;
+    padding: 20px 0 10px 0;
+}
+
+.packageDetailHeading h3 small {
+    font-size: 15px;
+    color: #f64c72;
+    font-weight: bold;
+}
+
+.packageDetailHeading h3:after {
+    content: '';
+    display: block;
+    position: relative;
+    width: 20%;
+    border: 1px solid #f64c72;
+    margin-top: 6px !important;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.packageDetailFeatures h5 {
+    font-size: 20px;
+    color: black;
+    padding: 10px 0 10px 0;
+}
+
+.packageDetailFeatures ul li {
+    font-size: 16px;
+    color: #553d67;
+    list-style-type: square;
+    margin-left: 13px;
+}
+
+.packageDetailPrice strong {
+    font-size: 35px;
+    color: #2f2fa2;
+    font-weight: bold;
+}
+
+.packageDetailPrice strong span {
+    color: #f64c72;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.packagesList ul li {
+    list-style-type: square;
+    margin-left: 13px;
+}
+
+.packagesList ul li a {
+    font-size: 17px;
+    font-weight: bold;
+    color: #f64c72;
+}
+
+.packagesList ul li a:hover {
+    color: #2f2fa2;
+}
+
+.otherPackageDetail h4 {
+    font-size: 25px;
+    color: #2f2fa2;
+    padding: 20px 0 10px 0;
+}
+
+/*About Us Page Section*/
+.aboutWelcome h3 {
+    text-align: center;
+    font-size: 25px;
+    color: #130959;
+    padding-top: 15px;
+}
+
+.aboutWelcome p {
+    text-align: center;
+    color: black;
+}
+
+.aboutWelcome span strong {
+    color: #f64c72;
+}
+
+.aboutText p {
+    padding-top: 10px;
+    text-align: center;
+    color: #553d67;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/*Packages Page Section*/
+.packagesHeading p {
+    font-size: 17px;
+    color: #553d67;
+    padding: 20px 0 15px 0;
+    text-align: center;
+    font-weight: bold;;
+}
+
+.packageSubHeading h5 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #f64c72;
+    padding: 10px 0 20px 0;
+    text-transform: uppercase;
+}
+
+#packages .packageBody h5 {
+    font-size: 30px;
+}
+#packages .packageBody h5 span{
+    font-size: 13px;
+}
+
+.packageOptional h4 {
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 110px 0 50px 0;
+    color: #f64c72;
+}
+
+.optionalAddonBody {
+    text-align: center;
+    width: 100%;
+    background-color: #130959;
+    border: 2px solid #130959;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    height: 100px;
+    box-shadow: 0px 2px 8px 0px;
+}
+
+.optionalAddonBody h6 {
+    font-size: 15px;
+    color: white;
+    padding: 33px;
+}
+.discountedPriceRWP, .discountedPriceISD{
+color: #130959;
+}
+
+/*Event Form page*/
+.infoHeading h5{
+    font-size: 20px;
+    color: #f64c72;
+    font-weight: bold;
+    padding: 15px 0;
+    text-align: center;
+}
+.choiceLocation ul li{
+    list-style: none;
+}
+.choiceLocation ul li label{
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+/*Gallery Page*/
+.galleryHeadding h4{
+    font-size: 25px;
+    color: #130959;
+    font-weight: bold;
+    margin-top: 40px
+}
+.galleryHeadding h4:after{
+    content: '';
+    display: block;
+    position: relative;
+    width: 7%;
+    border: 1px solid #f64c72;
+    margin-top: 6px !important;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.galleryImage img{
+}
+.galleryBody{
+    box-shadow: 0 0 5px 0;
+    border-radius: 0.25rem;
+}
+.hvrbox,
+.hvrbox * {
+	box-sizing: border-box;
+}
+.hvrbox {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	max-width: 100%;
+	height: auto;
+}
+.hvrbox img {
+	max-width: 100%;
+}
+.hvrbox .hvrbox-layer_bottom {
+	display: block;
+}
+.hvrbox .hvrbox-layer_top {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	padding: 15px;
+	-moz-transition: all 0.4s ease-in-out 0s;
+	-webkit-transition: all 0.4s ease-in-out 0s;
+	-ms-transition: all 0.4s ease-in-out 0s;
+	transition: all 0.4s ease-in-out 0s;
+}
+.hvrbox:hover .hvrbox-layer_top,
+.hvrbox.active .hvrbox-layer_top {
+	opacity: 1;
+}
+.hvrbox .hvrbox-text {
+	text-align: center;
+	font-size: 15px;
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-moz-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 13px;
+}
+.hvrbox .hvrbox-text_mobile {
+	font-size: 15px;
+	border-top: 1px solid rgb(179, 179, 179); /* for old browsers */
+	border-top: 1px solid rgba(179, 179, 179, 0.7);
+	margin-top: 5px;
+	padding-top: 2px;
+	display: none;
+}
+.hvrbox.active .hvrbox-text_mobile {
+	display: block;
+}
+.loadMoreBTN{
+    border: 2px solid #f64c72;
+    background: linear-gradient(to right, #f64c72 0%, #99738e 100%);
+    color: black;
+    font-weight: bold;
+    width: 20%;
+}
+.loadButton{
+    text-align: center;
+    width: 100%;
+    margin: 30px auto;
+}
+
+
+
+/*Extra CSS*/
+.pageNumbers p{
+font-size: 14px;
+    color: #F64C72;
+    text-align: right;
+}
+.pagination li a{
+    background-color: #130959;
+    color: #EF3B6A;
+    font-weight: bold;
+}
+.pagination li a:hover{
+    background-color: #EF3B6A;
+    color: #130959;
+}
+.blankError{
+    font-size: 15px;
+    color: white;
+    background-color: #130959;
+    margin-top: 40px
+}
+.errors ul{
+   margin-bottom: 0;
+}
+.errors ul li{
+    list-style: none;
+    color: darkred;
+    font-size: 14px;
+}

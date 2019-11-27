@@ -1,0 +1,1 @@
+web: gunicorn LP7Website.wsgi

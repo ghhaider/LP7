@@ -1,0 +1,181 @@
+/*Header Starts Here*/
+#header {
+    background-color: #2A206A;
+    height: 30px;
+}
+
+#header ul li {
+    list-style: none;
+    display: inline-block;
+    color: whitesmoke;
+}
+
+#header .topText {
+    padding-top: 3px;
+    text-align: center;
+}
+
+#header .topText ul li, .topText ul li a {
+    color: #f64c72;
+    font-size: 13px;
+}
+
+#header .topIcons {
+    padding-top: 3px;
+    text-align: center;
+}
+
+.topIcons ul li a {
+    color: #f64c72;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.topIcons ul li a:hover {
+    color: whitesmoke;
+}
+
+nav {
+    background-color: #130959;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    justify-content: flex-end;
+}
+
+#navbarNav .nav-item {
+    margin-right: 15px;
+}
+
+#navbarNav .nav-link {
+    color: white;
+}
+
+#navbarNav .nav-link:hover {
+    color: #f64c72;
+}
+
+#navContainer {
+    background-color: #130959;
+}
+
+.navbar-brand img {
+    width: 75px;
+    height: 70px;
+
+}
+
+.navbar {
+    padding: 0;
+}
+
+.logoTop {
+    margin: 0;
+}
+
+/*Footer Starts Here*/
+#footerTop {
+    background-color: #2A206A;
+}
+
+.bookSpace {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.bookSpace h3 {
+    color: white;
+}
+
+#footerBottom, #copyrightArea {
+    background-color: #130959;
+}
+
+.ftBottomBodyISD, .ftBottomBodyRWP, .ftBottomBodyLinks {
+    padding-top: 50px;
+}
+
+#footerBottom h5 {
+    color: #f64c72;
+}
+
+#footerBottom h5:after {
+    content: '';
+    display: block;
+    position: relative;
+    width: 36%;
+    border: 1px solid #f64c72;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+#footerBottom address, #footerBottom ul li, #footerBottom ul li a {
+    color: white;
+    list-style: none;
+    font-size: 13px;
+}
+
+.ftBottomBodyLinks ul li a:hover {
+    color: #f64c72 !important;
+}
+
+#footerBottom address {
+    font-size: 12px;
+    font-family: 'mulisemibold', sans-serif;
+}
+
+.ftCopyright {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.ftCopyright ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.ftCopyright ul li a {
+    color: #f64c72 !important;
+}
+
+.ftCopyright ul li a:hover {
+    color: white !important;
+}
+
+.ftCopyright p, .ftCopyright p a {
+    font-size: 13px;
+    color: #f64c72;
+    text-decoration: none;
+}
+
+.ftCopyright p a:hover {
+    color: white;
+}
+
+/*Scroll to top button*/
+#back2Top {
+    width: 50px;
+    line-height: 55px;
+    overflow: hidden;
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+    position: fixed;
+    bottom: 50px;
+    right: 0;
+    background: #130959;
+    color: #f64c72;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+#back2Top:hover {
+    background-color: #f64c72;
+    color: #130959;
+}

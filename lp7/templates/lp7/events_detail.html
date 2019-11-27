@@ -1,0 +1,49 @@
+{% extends "shared.html" %}
+
+{% block content %}
+    <section id="blockContent" style="padding: 0">
+        {% if sameContent.BG %}{% for bg in sameContent.BG %}
+            <section id="locationBG" style=" padding: 0; background-image: url('{{ bg.eventDetailPageBG.url }} ')">
+                <div class="col-12 siteHeading">
+                    <h2>Event Detail</h2>
+                </div>
+            </section>
+        {% endfor %}{% endif %}
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 eventDetailHeading">
+                        <h2> {{ events.eventTitle }}</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="eventListImage">
+                            <img class="img-fluid LocationImage"
+                                 src="{{ events.eventImage.url }}">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="eventListDetail">
+                            <p>{{ events.eventText }}</p>
+                            <div class="eventData mt-5">
+                                <ul>
+                                    <li><i class="fa fa-map-marker eventIcon" aria-hidden="true"></i>
+                                        <strong>Location:</strong> <span> {{ events.eventLocation }} </span></li>
+                                    <li><i class="far fa-calendar-alt eventIcon" aria-hidden="true"></i>
+                                        <strong>Date:</strong> <span> {{ events.eventDate }} </span></li>
+                                      <li><i class="fas fa-clock eventIcon" aria-hidden="true"></i>
+                                            <strong>Time:</strong> <span> {{ events.eventTime }} </span></li>
+                                    <li><i class="fas fa-info-circle eventIcon" aria-hidden="true"></i>
+                                        <strong>Status:</strong> <span> {{ events.status }} </span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'shared.html' %}
+
+{% block content %}
+
+    <section id="blockContent" style="padding: 0">
+        {% if sameContent.BG %}{% for bg in sameContent.BG %}
+            <section id="locationBG" style=" padding: 0; background-image: url('{{ bg.packageDetailPageBG.url }} ')">
+                <div class="col-12 siteHeading">
+                    <h2>Package Detail</h2>
+                </div>
+            </section>
+        {% endfor %}{% endif %}
+        {# Package Detail Section#}
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="packageDetailHeading">
+                            <h3>{{ pricingrawalpindi.PackageNameRWP }} <small>Rawalpindi</small></h3>
+                        </div>
+                        <div class="col-12 packageDetailFeatures">
+                            <h5>Package Detail</h5>
+                            <ul>
+                                {% for Prwp in pricingrawalpindi.PackageFeature.all %}
+                                    <li>{{ Prwp }}</li>
+                                    {% if not forloop.last %}
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                       <div class="col-12 packageDetailPrice">
+                            <strong id="RWP{{ pricingrawalpindi.discountedPriceRWP }}" >{{ pricingrawalpindi.PackagePrice }}<span>/Month</span>
+                            </strong>
+                            {% if pricingrawalpindi.discountedPriceRWP %}
+                                <h5 class="discountedPriceRWP">{{ pricingrawalpindi.discountedPriceRWP }}<span>/Month</span>
+                                </h5>
+                                <h6>Get <span>{{ pricingrawalpindi.discountedPercentRWP }} </span> off upto <span
+                                        style="font-size: 12px;"> {{ pricingrawalpindi.discountedDateRWP }} </span>
+                                </h6>
+                            {% endif %}
+                        </div>
+                        <div class="featuresBTN" style="text-align: left">
+                            <a href="{% url 'PackageSpace' %}" class="btn btn-outline-warning">Book Space Now</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="otherPackageDetail">
+                            <h4>Packages in Rawalpindi</h4>
+                            <div class="packagesList">
+                                {% if sameContent.Prwp %}
+                                    {% for PriceRWP in sameContent.Prwp %}
+                                        <ul>
+                                            <li>
+                                                <a href="{{ PriceRWP.get_absolute_url }}">{{ PriceRWP.PackageNameRWP }}</a>
+                                            </li>
+                                        </ul>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </section>
+
+{% endblock %}

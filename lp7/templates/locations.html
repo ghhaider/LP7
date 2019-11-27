@@ -1,0 +1,63 @@
+{% extends 'shared.html' %}
+
+{% block content %}
+    <section id="blockContent" style="padding: 0">
+        {% if sameContent.BG %}{% for bg in sameContent.BG %}
+            <section id="locationBG" style=" padding: 0; background-image: url('{{ bg.locationPageBG }} ')">
+                <div class="col-12 siteHeading">
+                    <h2>Locations</h2>
+                </div>
+            </section>
+        {% endfor %}{% endif %}
+        {# Location Section #}
+        <section id="Locations">
+            <div class="container">
+                <div class="col-12 locationSubHeading">
+                    <h3>Connect with one of our offices</h3>
+                </div>
+                <div class="col-12 locationHeadOffice mt-5" data-aos="fade-up" data-aos-duration="2500">
+                    <div class="row">
+                        <div class="col-md-8 col-12 headOfficeMap">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13287.655815114096!2d73.073286!3d33.633473!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x912f77a1d7080f77!2sLaunchPad7!5e0!3m2!1sen!2s!4v1569125007531!5m2!1sen!2s"
+                                    width="700" height="450" frameborder="0" style="border:0;"
+                                    allowfullscreen=""></iframe>
+                        </div>
+                        <div class="col-md-4 col-12 headOfficeDetail">
+                            <h4>Head Office</h4>
+                            {% if loc %}{% for lc in loc|slice:"1:2" %}
+                                <address>{{ lc.LocationAddress }}</address>
+                                <div class="eventData mt-5">
+                                    <ul>
+                                        <li><i class="fa fa-phone-alt eventIcon" aria-hidden="true"></i>
+                                            <strong>Phone:</strong> <span> {{ lc.LocationPhone }} </span></li>
+                                        <li><i class="fas fa-mobile-alt eventIcon" aria-hidden="true"></i>
+                                            <strong>Mobile:</strong> <span> {{ lc.LocationMobile }} </span></li>
+                                        <li><i class="fas fa-envelope eventIcon" aria-hidden="true"></i>
+                                            <strong>Email:</strong> <span> {{ lc.LocationEmailID }} </span></li>
+                                        <li><i class="fa fa-globe eventIcon" aria-hidden="true"></i>
+                                            <strong>Web:</strong> <span> {{ lc.LocationWeb }} </span></li>
+                                    </ul>
+                                </div>
+                                </div>
+                            {% endfor %}
+                            {% endif %}
+                    </div>
+                </div>
+                <div class="row">
+                    {% if loc %}{% for lc in loc reversed %}
+                        <div class="col-md-4 col-12 mt-5">
+                            <div class="LP7locationsBody" data-aos="fade-up" data-aos-duration="2500">
+                                <a href="{{ lc.get_absolute_url }}"> <img class="img-fluid LocationImage"
+                                                                          src="{{ lc.LocationImage.url }}"></a>
+                                <h4><a href="{{ lc.get_absolute_url }}"> {{ lc.LocationName }} </a></h4>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+{% endblock %}

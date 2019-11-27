@@ -1,0 +1,52 @@
+{% extends "shared.html" %}
+
+{% block content %}
+    <section id="blockContent" style="padding: 0">
+        {% if sameContent.BG %}{% for bg in sameContent.BG %}
+            <section id="locationBG" style=" padding: 0; background-image: url('{{ bg.promotionDetailPageBG.url }} ')">
+                <div class="col-12 siteHeading">
+                    <h2>Promotion Detail</h2>
+                </div>
+            </section>
+        {% endfor %}{% endif %}
+        {#Promotion Detail Page#}
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 eventDetailHeading">
+                        <h2> {{ promotions.promotionTitle }}</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="eventListImage">
+                            <img class="img-fluid LocationImage"
+                                 src="{{ promotions.promotionImage.url }}">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="promotionListDetail">
+                            <p>{{ promotions.promotionText }}</p>
+                            <div class="eventData mt-5">
+                                <ul>
+                                    <li><i class="fa fa-map-marker eventIcon" aria-hidden="true"></i>
+                                        <strong>Location:</strong> <span> {{ promotions.promotionLocation }} </span>
+                                    </li>
+                                    <li><i class="far fa-calendar-alt eventIcon" aria-hidden="true"></i>
+                                        <strong>Starting Date:</strong>
+                                        <span> {{ promotions.promotionStartDate }} </span></li>
+                                    <li><i class="fas fa-clock eventIcon" aria-hidden="true"></i>
+                                        <strong>Ending Date:</strong> <span> {{ promotions.promotionEndDate }} </span>
+                                    </li>
+                                    <li><i class="fas fa-info-circle eventIcon"></i>
+                                            <strong>Status:</strong>
+                                            <span> {{ promotions.status }} </span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+{% endblock %}

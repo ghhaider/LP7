@@ -1,0 +1,74 @@
+{% extends "shared.html" %}
+
+{% block content %}
+    <section id="blockContent" style="padding: 0">
+        {% if sameContent.BG %}{% for bg in sameContent.BG %}
+            <section id="locationBG" style=" padding: 0; background-image: url('{{ bg.galleryPageBG.url }} ')">
+                <div class="col-12 siteHeading">
+                    <h2>gallery</h2>
+                </div>
+            </section>
+        {% endfor %}{% endif %}
+
+        {#Gallery Page#}
+
+        <section id="gallery">
+            <div class="container">
+                <div class="col-12 galleryHeadding pl-0 pr-0">
+                    <h4>Islamabad</h4>
+                </div>
+                <div class="row">
+                    {% if gallISD %}
+                        {% for GISD in gallISD %}
+                            <div class="col-md-3 col-sm-6 col-12 mb-3">
+                                <div id="galleryBody" class="hvrbox">
+                                    <a href="{{ GISD.galleryISDimage }}" data-fancybox="gallery"
+                                       data-caption="{{ GISD.galleryISDimageName }} at {{ GISD.galleryISDevent }}">
+                                        <img src="{{ GISD.galleryISDimage }}" class="img-fluid rounded">
+
+                                        <div class="hvrbox-layer_top">
+                                            <p class="hvrbox-text">{{ GISD.galleryISDimageName }}
+                                                at {{ GISD.galleryISDevent }}
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    <div class="loadButton">
+                        <a href="{% url 'galleryListISD' %}" class="btn btn-outline-warning loadMoreBTN">Load More</a>
+                    </div>
+                </div>
+                <div class="col-12 galleryHeadding pl-0 pr-0">
+                    <h4>Rawalpindi</h4>
+                </div>
+                {% if gallRWP %}
+                    <div class="row">
+                        {% for GRWP in gallRWP%}
+                            <div class="col-md-3 col-sm-6 col-12 mb-3">
+                                <div id="galleryBody " class="hvrbox">
+                                    <a href="{{ GRWP.galleryRWPimage }}" data-fancybox="gallery1"
+                                       data-caption="{{ GRWP.galleryRWPimageName }} at {{ GRWP.galleryRWPevent }}">
+                                        <img src="{{ GRWP.galleryRWPimage }}"
+                                             class="img-fluid rounded hvrbox-layer_bottom">
+                                        <div class="hvrbox-layer_top">
+                                            <p class="hvrbox-text">{{ GRWP.galleryRWPimageName }}
+                                                at {{ GRWP.galleryRWPevent }}
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <div class="loadButton">
+                            <a href="{% url 'galleryListRWP' %}" class="btn btn-outline-warning loadMoreBTN">Load More</a>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+
+
+    </section>
+{% endblock %}

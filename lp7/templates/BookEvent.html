@@ -1,0 +1,132 @@
+{% extends 'shared.html' %}
+
+{% block content %}
+    <section id="blockContent" style="padding: 0px">
+
+        {% if sameContent.BG %}{% for bg in sameContent.BG %}
+            <section id="locationBG" style=" padding: 0; background-image: url('{{ bg.eventFormBG }} ')">
+                <div class="col-12 siteHeading">
+                    <h2>Book Your Event</h2>
+                </div>
+            </section>
+        {% endfor %}{% endif %}
+
+        {# Event Booking Section#}
+        <section id="contact">
+            <div class="container">
+                <div class="col-12 contactSubHeading">
+                    <h3>Tell us about your event, we'll make it happen.</h3>
+                </div>
+                <div class="col-12">
+                    {#Successfull message for addition of co-worker#}
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <p class="alert alert-success alert-dismissible fade show errorMessage"
+                               role="alert">{{ message }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </p>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                </div>
+                <div class="contactFormBody">
+                    <div data-aos="fade-up" data-aos-duration="2500">
+                        <form enctype="multipart/form-data" action="" method="POST">
+                            {% csrf_token %}
+                            <div class="eventFormBody">
+                                <div class="col-12 infoHeading"><h5>Your Information</h5></div>
+                                <div class="row mb-4">
+                                    <div class="col-md-6 col-12">
+                                        <label for="{{ form.name.id_for_label }}">Name:</label>
+                                        {{ form.name }}
+                                        <small class="errors">{{ form.name.errors }}</small>
+                                    </div>
+                                    <div class="col-md-6 col-12 ">
+                                        <label for="{{ form.email.id_for_label }}">Email:</label>
+                                        {{ form.email }}
+                                        <small class="errors">{{ form.email.errors }}</small>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-md-6 col-12 ">
+                                        <label for="{{ form.phone.id_for_label }}">Phone:</label>
+                                        {{ form.phone }}
+                                        <small class="errors">{{ form.phone.errors }}</small>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <label for="{{ form.organization.id_for_label }}">Organization:</label>
+                                        {{ form.organization }}
+                                        <small class="errors">{{ form.organization.errors }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-12 infoHeading"><h5>Event Information</h5></div>
+                                <div class="row mb-4">
+                                    <div class=" col-12 ">
+                                        <label for="{{ form.eventName.id_for_label }}">Event Name:</label>
+                                        {{ form.eventName }}
+                                        <small class="errors">{{ form.eventName.errors }}</small>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-md-6 col-12 ">
+                                        <label for="{{ form.eventDate.id_for_label }}">Event Date:</label>
+                                        {{ form.eventDate }}
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <label for="{{ form.eventTime.id_for_label }}">Event Time:</label>
+                                        {{ form.eventTime }}
+                                    </div>
+                                </div>
+                                 <div class="row mb-4">
+                                    <div class="col-md-6 col-12 ">
+                                        <label for="{{ form.eventGuest.id_for_label }}">No. of Guests:</label>
+                                        {{ form.eventGuest }}
+                                    </div>
+                                      <div class="col-md-6 col-12 ">
+                                        <label for="{{ form.eventLocation.id_for_label }}">Event Location:</label>
+                                        <div class="choiceLocation">{{ form.eventLocation }}</div>
+                                          <small class="errors">{{ form.eventLocation.errors }}</small>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class=" col-12 ">
+                                        <label for="{{ form.eventDetail.id_for_label }}">Event Detail:</label>
+                                        {{ form.eventDetail }}
+                                        <small class="errors">{{ form.eventDetail.errors }}</small>
+                                    </div>
+                                </div>
+                                <div class="captchaButton">
+                                     <div class="g-recaptcha" data-sitekey="6LesB8IUAAAAAPVr4y_kGa9xorQt_BR2LgxraxD5"></div>
+                                </div>
+                            </div>
+                            <div class="contactButton">
+                                <button type="submit" class="contactBTN btn btn-outline-warning">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 contactSubHeading">
+                <h3>Get social with us</h3>
+            </div>
+            <div class="col-12 contactSocial">
+                <div class="contactSocialIcons">
+                    <ul>
+                        <li><a href=""><i class="fab fa-facebook fa-2x"></i></a></li>
+                        <li><a href=""><i class="fab fa-twitter fa-2x"></i></a></li>
+                        {#                            <li><a href=""><i class="fab fa-facebook"></i></a></li>#}
+                        {#                            <li><a href=""><i class="fab fa-facebook"></i></a></li>#}
+                    </ul>
+
+                </div>
+
+            </div>
+        </section>
+
+
+    </section>
+{% endblock %}

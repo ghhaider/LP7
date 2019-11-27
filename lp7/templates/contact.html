@@ -1,0 +1,99 @@
+{% extends 'shared.html' %}
+
+{% block content %}
+    <section id="blockContent" style="padding: 0px">
+
+        {% if sameContent.BG %}{% for bg in sameContent.BG %}
+            <section id="locationBG" style=" padding: 0; background-image: url('{{ bg.contactPageBG }} ')">
+                <div class="col-12 siteHeading">
+                    <h2>Contact</h2>
+                </div>
+            </section>
+        {% endfor %}{% endif %}
+
+        {# Contact Us Section#}
+        <section id="contact">
+            <div class="container">
+                <div class="col-12 contactSubHeading">
+                    <h3>Get in touch with us</h3>
+                </div>
+                <div class="col-12">
+                    {#Successfull message for addition of co-worker#}
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <p class="alert alert-success alert-dismissible fade show errorMessage"
+                                   role="alert">{{ message }}
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </p>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="contactFormBody" data-aos="fade-up" data-aos-duration="2500">
+
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <label for="{{ form.name.id_for_label }}">Name:</label>
+                                        {{ form.name }}
+                                        <small class="errors">{{ form.name.errors }}</small>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <label for="{{ form.email.id_for_label }}">Email:</label>
+                                        {{ form.email }}
+                                        <small class="errors">{{ form.email.errors }}</small>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <label for="{{ form.phone.id_for_label }}">Phone:</label>
+                                        {{ form.phone }}
+                                        <small class="errors">{{ form.phone.errors }}</small>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <label for="{{ form.message.id_for_label }}">Message:</label>
+                                        {{ form.message }}
+                                        <small class="errors">{{ form.message.errors }}</small>
+                                    </div>
+                                </div>
+                                <div class="captchaButton">
+                                     <div class="g-recaptcha" data-sitekey="6LesB8IUAAAAAPVr4y_kGa9xorQt_BR2LgxraxD5"></div>
+                                </div>
+                                <div class="contactButton">
+                                    <button type="submit" class="contactBTN btn btn-outline-warning">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 contactSubHeading">
+                <h3>Get social with us</h3>
+            </div>
+            <div class="col-12 contactSocial">
+                <div class="contactSocialIcons">
+                    <ul>
+                        <li><a href=""><i class="fab fa-facebook fa-2x"></i></a></li>
+                        <li><a href=""><i class="fab fa-twitter fa-2x"></i></a></li>
+                        {#                            <li><a href=""><i class="fab fa-facebook"></i></a></li>#}
+                        {#                            <li><a href=""><i class="fab fa-facebook"></i></a></li>#}
+                    </ul>
+
+                </div>
+
+            </div>
+        </section>
+
+
+    </section>
+{% endblock %}

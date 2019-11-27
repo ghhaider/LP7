@@ -1,0 +1,388 @@
+{% extends "shared.html" %}
+{% load cache %}
+
+{% cache 500 Index %}
+    {% block content %}
+
+        {#Head Section Starts Here#}
+        {% if sameContent.BG %}{% for bg in sameContent.BG %}
+            <section id="head" style=" padding: 0; background-image: url('{{ bg.homeHeadPageBG.url }} ')">
+                <div class="container">
+                    <div class="col-lg-4 col-md-6 col-12 headText">
+                        <h2 data-aos="fade-down" data-aos-duration="2500">Love Where You Work</h2>
+                        <p>Premium workspaces for businesses of all sizes in Rawalpindi & Islamabad.</p>
+                        <a data-aos="fade-up" href="{% url 'contact' %}" class="btn btn-warning">Enquire Now</a>
+                    </div>
+
+                </div>
+            </section>
+        {% endfor %}{% endif %}
+
+        {#Why LP7 Starts Here#}
+        <section id="YLP7">
+            <div class="container">
+                <div class="col-12 LP7Heading">
+                    <h2>About LaunchPad7</h2>
+                </div>
+                {% if about %}
+                    {% for aboutLP7 in about %}
+                        <div class="col-12 YLP7SubHeading">
+                            <h3>{{ aboutLP7.aboutHeading }}</h3>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                <div class="row">
+                    <div class="col-md-6 YLP7Para">
+                        {% if about %}
+                            {% for aboutLP7 in about %}
+                                <p data-aos="fade-up" data-aos-duration="2500">{{ aboutLP7.aboutParagraph1 }}</p>
+                            {% endfor %}
+                        {% endif %}
+                        <div class="aboutBTN">
+                            <a href="{% url 'about' %}" class="btn btn-outline-warning">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 aboutImage">
+                        {% if about %}
+                            {% for aboutLP7 in about %}
+                                <img data-aos="fade-up" data-aos-duration="2500" src="{{ aboutLP7.aboutImage.url }}"
+                                     alt="About Image" class="img-fluid">
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {#Perfect Match Section Satrts Here#}
+        {% if BG %}{% for bg in BG %}
+            <section id="perfectMatch" style="background-image: url('{{ bg.perfectBG }} ') ">{% endfor %}{% endif %}
+        <div class="container">
+            <div class="col-12 perfectMatchText">
+                <h4>Launchpad7</h4>
+                <h3>The Perfect Match For</h3>
+                <h5>Startup</h5>
+            </div>
+        </div>
+        </section>
+
+        {# LP7 Features Satrts Here #}
+        <section id="LP7features">
+            <div class="container">
+                <div class="col-12 LP7Heading">
+                    <h2>Features</h2>
+                </div>
+                <div class="row">
+                    {% if featuresLP7 %}{% for features in featuresLP7 %}
+                        <div class="col-md-4 col-12 mt-5">
+                            <div class="LP7featuresBody" data-aos="fade-up" data-aos-duration="2500">
+                                <p>{{ features.featureText }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        {# LP7 Events Starts Here #}
+        <section id="LP7events">
+            <div class="container">
+                <div class="col-12 LP7Heading">
+                    <h2>Events</h2>
+                </div>
+            <div class="col-12">
+                    {#Successfull message for no Promotions#}
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <p class="alert alert-success fade show errorMessage blankError"
+                                   role="alert">{{ message }}
+                                </p>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                {% if events %}
+                    <div class="row">
+                        <div class="col-sm-6 col-12 mt-5">
+                            <div class="LP7eventImage">
+                                <a href="{{ events.get_absolute_url }}"> <img data-aos="fade-up"
+                                                                           data-aos-duration="2500"
+                                                                           class="img-fluid LocationImage"
+                                                                           src="{{ events.eventImage.url }}"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 mt-5">
+                            <div class="LP7eventDetail">
+                                <h3 data-aos="fade-up" data-aos-duration="2500"><a
+                                        href="{{ events.get_absolute_url }}"> {{ events.eventTitle }} </a></h3>
+                                <p>{{ events.eventText }}</p>
+                                <div class="eventData mt-5">
+                                    <h5>Event Detail</h5>
+                                    <ul>
+                                        <li><i class="fa fa-map-marker eventIcon" aria-hidden="true"></i>
+                                            <strong>Location:</strong> <span> {{ events.eventLocation }} </span></li>
+                                        <li><i class="far fa-calendar-alt eventIcon" aria-hidden="true"></i>
+                                            <strong>Date:</strong> <span> {{ events.eventDate }} </span></li>
+                                        <li><i class="fas fa-clock eventIcon" aria-hidden="true"></i>
+                                            <strong>Time:</strong> <span> {{ events.eventTime }} </span></li>
+                                       <li><i class="fas fa-info-circle eventIcon"></i>
+                                            <strong>Status:</strong>
+                                            <span> {{ events.status }} </span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+        {# Promotions & Offers #}
+        <section id="promotions">
+            <div class="container">
+                <div class="col-12 LP7Heading">
+                    <h2>Promotions</h2>
+                </div>
+             <div class="col-12">
+                    {#Successfull message for no Promotions#}
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <p class="alert alert-success fade show errorMessage blankError"
+                                   role="alert">{{ message }}
+                                </p>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                {% if promo %}
+                    {% for promos in promo reversed %}
+                    <div class="row">
+                        <div class="col-sm-6 col-12 mt-5">
+                            <div class="LP7promotionImage">
+                                <a href="{{ promos.get_absolute_url }}"> <img data-aos="fade-up" data-aos-duration="2500"
+                                                                             class="img-fluid LocationImage"
+                                                                             src="{{ promos.promotionImage.url }}"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 mt-5">
+                            <div class="LP7promotionDetail">
+                                <h3 data-aos="fade-up" data-aos-duration="2500"><a
+                                        href="{{ promos.get_absolute_url }}"> {{ promos.promotionTitle }} </a>
+                                </h3>
+                                <p>{{ promos.promotionText }}</p>
+                                <div class="promotionData mt-5">
+                                    <h5>Promotion Detail</h5>
+                                    <ul>
+                                        <li><i class="fa fa-map-marker eventIcon" aria-hidden="true"></i>
+                                            <strong>Location:</strong> <span> {{ promos.promotionLocation }} </span>
+                                        </li>
+                                        <li><i class="far fa-calendar-alt eventIcon" aria-hidden="true"></i>
+                                            <strong>Starting Date:</strong>
+                                            <span> {{ promos.promotionStartDate }} </span></li>
+                                        <li><i class="fas fa-calendar-alt eventIcon" aria-hidden="true"></i>
+                                            <strong>Ending Date:</strong>
+                                            <span> {{ promos.promotionEndDate }} </span></li>
+                                        <li><i class="fas fa-info-circle eventIcon"></i>
+                                            <strong>Status:</strong>
+                                            <span> {{ promos.status }} </span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </section>
+        {#  Pricing Plans #}
+        <section id="pricing">
+            <div class="container">
+                <div class="col-12 LP7Heading">
+                    <h2>Pricing Plan</h2>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        {#Pricing Toggle Tabs Starts#}
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="RawalpindiPill" data-toggle="pill" href="#RWPtab"
+                                   role="tab"
+                                   aria-controls="pills-home" aria-selected="true">Rawalpindi</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="IslamabadPill" data-toggle="pill" href="#ISDtab" role="tab"
+                                   aria-controls="pills-profile" aria-selected="false">Islamabad</a>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="RWPtab" role="tabpanel"
+                                 aria-labelledby="RawalpindiPill">
+                                <div class="row ">
+                                    {% if Prwp %}
+                                        {% for PriceRWP in Prwp|slice:":4" %}
+                                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
+                                                <div class="table table-responsive packageBody" data-aos="fade-up"
+                                                     data-aos-duration="2500">
+                                                    <div class="packageHeader">
+                                                        <img src="{{ PriceRWP.PackageImageRWP.url }}" class="img-fluid"
+                                                             alt="Price Package Image">
+                                                        <h5>{{ PriceRWP.PackageNameRWP }}</h5>
+                                                    </div>
+                                                    <div class="packageFeaturesList">
+                                                        <ul>
+                                                            {% for Prwp in PriceRWP.PackageFeature.all|slice:":4" %}
+                                                                <li>{{ Prwp }}</li>
+                                                                {% if not forloop.last %}
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                            <p id="RWP{{ PriceRWP.discountedPriceRWP }}">{{ PriceRWP.PackagePrice }}<span>/Month</span>
+                                                            </p>
+                                                            {% if PriceRWP.discountedPriceRWP %}
+                                                                <h5 class="discountedPriceRWP">{{ PriceRWP.discountedPriceRWP }}<span>/Month</span>
+                                                                </h5>
+                                                                <h6>Get <span>{{ PriceRWP.discountedPercentRWP }}</span>off
+                                                                    upto <span
+                                                                            style="font-size: 12px;">{{ PriceRWP.discountedDateRWP }}</span>
+                                                                </h6>
+                                                            {% endif %}
+
+                                                            <div class="featuresBTN">
+                                                                <a href="{{ PriceRWP.get_absolute_url }}"
+                                                                   class="btn btn-outline-warning">More
+                                                                    Detail</a>
+                                                            </div>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="ISDtab" role="tabpanel" aria-labelledby="IslamabadPill">
+                                <div class="row ">
+                                    {% if Pisd %}
+                                        {% for PriceISD in Pisd|slice:":4" %}
+                                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
+                                                <div class="table table-responsive packageBody">
+                                                    <div class="packageHeader">
+                                                        <img src="{{ PriceISD.PackageImageISD }}" class="img-fluid"
+                                                             alt="Price Package Image">
+                                                        <h5>{{ PriceISD.PackageNameISD }}</h5>
+                                                    </div>
+                                                    <div class="packageFeaturesList">
+                                                        <ul>
+                                                            {% for Pisd in PriceISD.PackageFeature.all|slice:":4" %}
+                                                                <li>{{ Pisd }}</li>
+                                                                {% if not forloop.last %}
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                            <p id="ISD{{ PriceISD.discountedPriceISD }}">{{ PriceISD.PackagePrice }}<span>/Month</span>
+                                                            </p>
+                                                            {% if PriceISD.discountedPriceISD %}
+                                                                <h5 class="discountedPriceISD">{{ PriceISD.discountedPriceISD }}<span>/Month</span>
+                                                                </h5>
+                                                                <h6>Get
+                                                                    <span>{{ PriceISD.discountedPercentISD }} </span>
+                                                                    off upto <span
+                                                                            style="font-size: 12px;"> {{ PriceISD.discountedDateISD }} </span>
+                                                                </h6>
+                                                            {% endif %}
+                                                            <div class="featuresBTN">
+                                                                <a href="{{ PriceISD.get_absolute_url }}"
+                                                                   class="btn btn-outline-warning">More
+                                                                    Detail</a>
+                                                            </div>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {#Pricing Toggle Tabs Ends#}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        {# LP7 Members Logos#}
+        {% if BG %}{% for bg in BG %}
+            <section id="memberLogos" style="background-image: url('{{ bg.memberBG }} ') ">{% endfor %}{% endif %}
+        <div class="container">
+            <div class="col-12 LP7Heading">
+                <h2>Members</h2>
+            </div>
+            <div class="row">
+                <div class="col-12 memberSliderBody">
+                    <div class="memberSlide">
+                        {% if memLogo %} {% for clientLogo in memLogo %}
+                            <div class="slide"><img src="{{ clientLogo.logoImage }}" class="img-thumbnail logoStyle">
+                            </div>
+                        {% endfor %}{% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        {#Testimonials Section Starts Here#}
+        <section id="testimonial">
+            <div class="container">
+                <div class="col-12 LP7Heading">
+                    <h2>Testimonials</h2>
+                </div>
+                <div class="col-12 testiSliderBody mt-5">
+                    <div id="testimonial-slider" class="owl-carousel">
+                        {% if testi %} {% for testimonial in testi %}
+                            <div class="testimonial">
+                                <div class="pic">
+                                    <img src="{{ testimonial.testiImage }}" class="img-fluid" alt=""/>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="description"><i class="fas fa-quote-left"></i> {{ testimonial.testiText }}
+                                        <i
+                                                class="fas fa-quote-right"></i></p>
+                                    <h3 class="testimonial-title">{{ testimonial.testiName }}<br>
+                                        <strong>{{ testimonial.testiCompany }}</strong>
+                                        <small class="post">{{ testimonial.testiTitle }}</small>
+                                    </h3>
+                                </div>
+                            </div>
+                        {% endfor %} {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {# LP7 Locations Satrts Here #}
+        <section id="Locations">
+            <div class="container">
+                <div class="col-12 LP7Heading">
+                    <h2>Locations</h2>
+                </div>
+                <div class="row">
+                    {% if loc %}{% for lc in loc reversed %}
+                        <div class="col-md-4 col-12 mt-5">
+                            <div class="LP7locationsBody" data-aos="fade-up" data-aos-duration="2500">
+                                <a href="{{ lc.get_absolute_url }}"> <img class="img-fluid LocationImage"
+                                                                          src="{{ lc.LocationImage }}"></a>
+                                <h4><a href="{{ lc.get_absolute_url }}"> {{ lc.LocationName }} </a></h4>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+    {% endblock %}
+{% endcache %}

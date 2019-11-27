@@ -1,0 +1,83 @@
+{% extends "shared.html" %}
+
+
+{% block content %}
+    <section id="blockContent" style="padding: 0">
+        {% if sameContent.BG %}{% for bg in sameContent.BG %}
+            <section id="locationBG" style=" padding: 0; background-image: url('{{ bg.promotionListPageBG.url }} ')">
+                <div class="col-12 siteHeading">
+                    <h2>Promotions</h2>
+                </div>
+            </section>
+        {% endfor %}{% endif %}
+
+        {#  Promotion Lsit Section #}
+        <section id="eventList">
+            <div class="container">
+                {% if promotions_list %}
+                    {% for promotions in promotions_list reversed %}
+                        <div class="row mt-2 mb-5">
+                            <div class="col-md-5 col-12">
+                                <div class="eventListImage">
+                                    <a href="{{ promotions.get_absolute_url }}"> <img class="img-fluid LocationImage"
+                                                                                      src="{{ promotions.promotionImage.url }}"></a>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-12">
+                                <div class="promotionListDetail">
+                                    <h4><a href="{{ promotions.get_absolute_url }}">{{ promotions.promotionTitle }}</a>
+                                    </h4>
+                                    <div class="eventData mt-5">
+                                        <h5>Promotion Detail</h5>
+                                        <ul>
+                                            <li><i class="fa fa-map-marker eventIcon" aria-hidden="true"></i>
+                                                <strong>Location:</strong>
+                                                <span> {{ promotions.promotionLocation }} </span></li>
+                                            <li><i class="far fa-calendar-alt eventIcon" aria-hidden="true"></i>
+                                                <strong>Starting Date:</strong>
+                                                <span> {{ promotions.promotionStartDate }} </span></li>
+                                            <li><i class="fas fa-clock eventIcon" aria-hidden="true"></i>
+                                                <strong>Ending Date:</strong>
+                                                <span> {{ promotions.promotionEndDate }} </span></li>
+                                            <li><i class="fas fa-info-circle eventIcon"></i>
+                                            <strong>Status:</strong>
+                                            <span> {{ promotions.status }} </span></li>
+                                        </ul>
+                                        <a href="{{ promotions.get_absolute_url }}"
+                                           class="btn btn-outline-warning promotionListButton">More Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <div class="row">
+                    <div class="col-md-6 col-12 mt-5 pagination">
+                        {% if is_paginated %}
+                            <nav aria-label="Page navigation conatiner"></nav>
+                            <ul class="pagination justify-content-center">
+                                {% if page_obj.has_previous %}
+                                    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo;
+                                        Prev </a></li>
+                                {% endif %}
+                                {% if page_obj.has_next %}
+                                    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> Next
+                                        &raquo;</a></li>
+
+                                {% endif %}
+                            </ul>
+                            </nav>
+
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6 col-12 pageNumbers mt-5">
+                        {% if is_paginated %}
+                            <p>Page {{ page_obj.number }} of {{ paginator.num_pages }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+{% endblock %}

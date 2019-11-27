@@ -1,0 +1,37 @@
+{% extends "shared.html" %}
+
+
+{% block content %}
+    <section id="blockContent" style="padding: 0">
+        {% if sameContent.BG %}{% for bg in sameContent.BG %}
+            <section id="locationBG" style=" padding: 0; background-image: url('{{ bg.aboutPageBG.url }} ')">
+                <div class="col-12 siteHeading">
+                    <h2>About Us</h2>
+                </div>
+            </section>
+        {% endfor %}{% endif %}
+        {#  About Page Section #}
+        <section id="eventList">
+            <div class="container">
+                <div class="col-12 aboutWelcome">
+                    <h3>Welcome to LaunchPad7</h3>
+                    <p>A premium workspace for <span><strong>Startup</strong></span></p>
+                </div>
+                <div class="row">
+                    <div class="col-12 aboutText">
+                        {% if about_list %}
+                            {% for about in about_list %}
+                                <p>{{ about.aboutParagraph2 }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+
+
+    </section>
+{% endblock %}
