@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a993ee2b-9981-45fb-87e1-f858f35db762" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lp7/static/css/fontawesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/lp7/static/css/fontawesome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lp7/static/css/owl.carousel.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/lp7/static/css/owl.carousel.min.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +86,7 @@
       <workItem from="1574786800620" duration="2374000" />
       <workItem from="1574789199855" duration="1715000" />
       <workItem from="1574827691745" duration="5866000" />
-      <workItem from="1574834890079" duration="1354000" />
+      <workItem from="1574834890079" duration="1702000" />
     </task>
     <servers />
   </component>
