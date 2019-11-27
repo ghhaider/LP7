@@ -15,7 +15,7 @@ def common_content(request):
     events = Events.objects.filter(status='Active').last()
 
     context = {
-        'topBarNumber': num,
+        'num': num,
         'loc': location,
         'altText': alt,
         'BG': PMBG,
