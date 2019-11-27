@@ -104,33 +104,33 @@
                         </ul>
                     {% endif %}
                 </div>
-                {% if events %}
+                {% if sameContent.events %}
                     <div class="row">
                         <div class="col-sm-6 col-12 mt-5">
                             <div class="LP7eventImage">
-                                <a href="{{ events.get_absolute_url }}"> <img data-aos="fade-up"
+                                <a href="{{ sameContent.events.get_absolute_url }}"> <img data-aos="fade-up"
                                                                            data-aos-duration="2500"
                                                                            class="img-fluid LocationImage"
-                                                                           src="{{ events.eventImage.url }}"></a>
+                                                                           src="{{ sameContent.events.eventImage.url }}"></a>
                             </div>
                         </div>
                         <div class="col-sm-6 col-12 mt-5">
                             <div class="LP7eventDetail">
                                 <h3 data-aos="fade-up" data-aos-duration="2500"><a
-                                        href="{{ events.get_absolute_url }}"> {{ events.eventTitle }} </a></h3>
-                                <p>{{ events.eventText }}</p>
+                                        href="{{ sameContent.events.get_absolute_url }}"> {{ sameContent.events.eventTitle }} </a></h3>
+                                <p>{{ sameContent.events.eventText }}</p>
                                 <div class="eventData mt-5">
                                     <h5>Event Detail</h5>
                                     <ul>
                                         <li><i class="fa fa-map-marker eventIcon" aria-hidden="true"></i>
-                                            <strong>Location:</strong> <span> {{ events.eventLocation }} </span></li>
+                                            <strong>Location:</strong> <span> {{ sameContent.events.eventLocation }} </span></li>
                                         <li><i class="far fa-calendar-alt eventIcon" aria-hidden="true"></i>
-                                            <strong>Date:</strong> <span> {{ events.eventDate }} </span></li>
+                                            <strong>Date:</strong> <span> {{ sameContent.events.eventDate }} </span></li>
                                         <li><i class="fas fa-clock eventIcon" aria-hidden="true"></i>
-                                            <strong>Time:</strong> <span> {{ events.eventTime }} </span></li>
+                                            <strong>Time:</strong> <span> {{ sameContent.events.eventTime }} </span></li>
                                        <li><i class="fas fa-info-circle eventIcon"></i>
                                             <strong>Status:</strong>
-                                            <span> {{ events.status }} </span></li>
+                                            <span> {{ sameContent.events.status }} </span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -157,43 +157,42 @@
                         </ul>
                     {% endif %}
                 </div>
-                {% if promo %}
-                    {% for promos in promo reversed %}
+                {% if sameContent.promotion %}
+
                     <div class="row">
                         <div class="col-sm-6 col-12 mt-5">
                             <div class="LP7promotionImage">
-                                <a href="{{ promos.get_absolute_url }}"> <img data-aos="fade-up" data-aos-duration="2500"
+                                <a href="{{ sameContent.promotion.get_absolute_url }}"> <img data-aos="fade-up" data-aos-duration="2500"
                                                                              class="img-fluid LocationImage"
-                                                                             src="{{ promos.promotionImage.url }}"></a>
+                                                                             src="{{ sameContent.promotion.promotionImage.url }}"></a>
                             </div>
                         </div>
                         <div class="col-sm-6 col-12 mt-5">
                             <div class="LP7promotionDetail">
                                 <h3 data-aos="fade-up" data-aos-duration="2500"><a
-                                        href="{{ promos.get_absolute_url }}"> {{ promos.promotionTitle }} </a>
+                                        href="{{ sameContent.promotion.get_absolute_url }}"> {{ sameContent.promotion.promotionTitle }} </a>
                                 </h3>
-                                <p>{{ promos.promotionText }}</p>
+                                <p>{{ sameContent.promotion.promotionText }}</p>
                                 <div class="promotionData mt-5">
                                     <h5>Promotion Detail</h5>
                                     <ul>
                                         <li><i class="fa fa-map-marker eventIcon" aria-hidden="true"></i>
-                                            <strong>Location:</strong> <span> {{ promos.promotionLocation }} </span>
+                                            <strong>Location:</strong> <span> {{ sameContent.promotion.promotionLocation }} </span>
                                         </li>
                                         <li><i class="far fa-calendar-alt eventIcon" aria-hidden="true"></i>
                                             <strong>Starting Date:</strong>
-                                            <span> {{ promos.promotionStartDate }} </span></li>
+                                            <span> {{ sameContent.promotion.promotionStartDate }} </span></li>
                                         <li><i class="fas fa-calendar-alt eventIcon" aria-hidden="true"></i>
                                             <strong>Ending Date:</strong>
-                                            <span> {{ promos.promotionEndDate }} </span></li>
+                                            <span> {{ sameContent.promotion.promotionEndDate }} </span></li>
                                         <li><i class="fas fa-info-circle eventIcon"></i>
                                             <strong>Status:</strong>
-                                            <span> {{ promos.status }} </span></li>
+                                            <span> {{ sameContent.promotion.status }} </span></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
                 {% endif %}
             </div>
         </section>

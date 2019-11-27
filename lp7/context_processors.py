@@ -1,4 +1,5 @@
-from lp7.models import TopBar, Logo, Locations, BGimages, PricingIslamabad, PricingRawalpindi, EventsHeader
+from lp7.models import TopBar, Logo, Locations, BGimages, PricingIslamabad, PricingRawalpindi, EventsHeader, Events, \
+    Promotions
 
 
 def common_content(request):
@@ -10,6 +11,8 @@ def common_content(request):
     Prwp = PricingRawalpindi.objects.all()
     Pisd = PricingIslamabad.objects.all()
     eventHeading = EventsHeader.objects.last()
+    promotion = Promotions.objects.filter(status='Active').last()
+    events = Events.objects.filter(status='Active').last()
 
     context = {
         'topBarNumber': num,
@@ -18,7 +21,9 @@ def common_content(request):
         'BG': PMBG,
         'Prwp': Prwp,
         'Pisd': Pisd,
-        'eventHeading': eventHeading
+        'eventHeading': eventHeading,
+        'events': events,
+        'promotion': promotion
     }
 
     return {'sameContent': context}

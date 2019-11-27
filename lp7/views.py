@@ -35,8 +35,6 @@ def index(request):
     Pisd = PricingIslamabad.objects.all()
     Pfeature = PackagePriceFeatures.objects.all()
 
-    promotion = Promotions.objects.filter(status='Active').all()
-    events = Events.objects.filter(status='Active').last()
 
     #if promotion:
         #promo = Promotions.objects.filter(status='Active')
@@ -63,8 +61,6 @@ def index(request):
     'Prwp': Prwp,
     'Pisd': Pisd,
     'Pfeature': Pfeature,
-    'events': events,
-    'promo': promotion
     })
 
     # Render the HTML template index.html
