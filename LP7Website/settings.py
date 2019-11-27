@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'LP7Website',
         'USER': 'postgres',
         'PASSWORD': 'admin',
-        'HOST': 'localhost',
+        'HOST': 'http://192.168.0.72',
         'PORT': '5432'
     }
 }
