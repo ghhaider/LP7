@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'LP7Website.wsgi.application'
 DATABASES = {
     'default': {
          'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'LP7Website',
-#         'USER': 'postgres',
-#         'PASSWORD': 'admin',
+        'NAME': 'LP7Website',
+         'USER': 'postgres',
+        'PASSWORD': 'admin',
 #         'HOST': 'localhost',
 #         'PORT': '5432'
     }
