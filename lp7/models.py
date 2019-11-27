@@ -9,15 +9,16 @@ from django.urls import reverse
 
 
 # Model for TopBar.
-class TopBar(models.Model):
-    TopBarNum = models.CharField('Top Bar Number', max_length=30, help_text='Enter phone number to display on TopBar.')
+class top_bar(models.Model):
+    phone_top_bar = models.CharField('Top Bar Number', max_length=30, help_text='Enter phone number to display on TopBar.')
 
     def __str__(self):
         """String for representing the Model object."""
-        return self.TopBarNum
+        return self.phone_top_bar
 
     class Meta:
-        verbose_name_plural = "Top Bar"
+        verbose_name_plural = "Top Bar Section"
+
 
 
 class Logo(models.Model):

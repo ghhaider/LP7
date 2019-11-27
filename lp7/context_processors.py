@@ -1,10 +1,10 @@
-from lp7.models import TopBar, Logo, Locations, BGimages, PricingIslamabad, PricingRawalpindi, EventsHeader, Events, \
+from lp7.models import top_bar, Logo, Locations, BGimages, PricingIslamabad, PricingRawalpindi, EventsHeader, Events, \
     Promotions
 
 
 def common_content(request):
     # Display all the Dynamic values form models
-    num = TopBar.objects.last()
+    num = top_bar.objects.last()
     alt = Logo.objects.all()
     location = Locations.objects.all()
     PMBG = BGimages.objects.all()

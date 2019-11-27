@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a993ee2b-9981-45fb-87e1-f858f35db762" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LP7Website/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/LP7Website/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lp7/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/lp7/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lp7/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/lp7/context_processors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lp7/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/lp7/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lp7/templates/shared.html" beforeDir="false" afterPath="$PROJECT_DIR$/lp7/templates/shared.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lp7/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lp7/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +89,7 @@
       <workItem from="1574786800620" duration="2374000" />
       <workItem from="1574789199855" duration="1715000" />
       <workItem from="1574827691745" duration="5866000" />
-      <workItem from="1574834890079" duration="8142000" />
+      <workItem from="1574834890079" duration="9164000" />
     </task>
     <servers />
   </component>
