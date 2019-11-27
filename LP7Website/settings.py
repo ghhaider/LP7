@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -80,11 +81,12 @@ WSGI_APPLICATION = 'LP7Website.wsgi.application'
 
 DATABASES = {
     'default': {
+        'default': 'dj_database_url.config()',
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'LP7Website',
         'USER': 'postgres',
         'PASSWORD': 'admin',
-        'HOST': 'http://192.168.0.72',
+        'HOST': 'localhost',
         'PORT': '5432'
     }
 }
