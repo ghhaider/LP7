@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a993ee2b-9981-45fb-87e1-f858f35db762" name="Default Changelist" comment="" />
+    <list default="true" id="a993ee2b-9981-45fb-87e1-f858f35db762" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +86,7 @@
       <workItem from="1574786800620" duration="2374000" />
       <workItem from="1574789199855" duration="1715000" />
       <workItem from="1574827691745" duration="5866000" />
-      <workItem from="1574834890079" duration="341000" />
+      <workItem from="1574834890079" duration="1354000" />
     </task>
     <servers />
   </component>
