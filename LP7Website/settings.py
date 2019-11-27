@@ -81,12 +81,12 @@ WSGI_APPLICATION = 'LP7Website.wsgi.application'
 
 DATABASES = {
     'default': {
-         'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'LP7Website',
-         'USER': 'postgres',
+        'USER': 'postgres',
         'PASSWORD': 'admin',
-#         'HOST': 'localhost',
-#         'PORT': '5432'
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
@@ -146,3 +146,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #  Add configuration for static files storage using whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
