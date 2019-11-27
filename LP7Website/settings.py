@@ -79,17 +79,16 @@ WSGI_APPLICATION = 'LP7Website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'default': 'dj_database_url.config()',
-#         'ENGINE': 'django.db.backends.postgresql',
+DATABASES = {
+    'default': {
+         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'LP7Website',
 #         'USER': 'postgres',
 #         'PASSWORD': 'admin',
 #         'HOST': 'localhost',
 #         'PORT': '5432'
-#     }
-# }
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
